@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{#doc_name}}
+      <title>{{doc_name}} - Documentation</title>
+    {{/doc_name}}
+    {{^doc_name}}
+      <title>Documentation</title>
+    {{/doc_name}}
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/atom-one-dark.min.css">
+  </head>
+  <body>
+    {{#doc_name}}
+      <h1>{{doc_name}} - Documentation</h1>
+    {{/doc_name}}
+    {{^doc_name}}
+      <h1>Documentation</h1>
+    {{/doc_name}}
+    <p class="lastbuild">Dernière génération: {{ last_build_date }}</p>
+    <p class="lastbuild">Version: {{ version }}</p>
+    <div class="postmanContainer">
+      <img src="./postman.svg" />
+      <p class="postmanLink"><a href="./collection.json" download>Collection Postman</a></p>
+    </div>
+  
+    <div class="container">
+      {{#categories}}
+        <div class="categorie">
+          <h2>{{title}}</h2>
+          <div class="categorieContent hidden">
+            {{#routes}}
+              <div class="route">
+                <h3><span class="method {{method}}">{{method}}</span> {{url}}</h3>
+                <div class="routeContent hidden">
+                  {{#description}}
+                    <p class="description">{{description}}</p>
+                  {{/description}}
+
+                  <h4>Body</h4>
+                  {{#body}}
+                    <pre><code class="json">{{body}}</code></pre>
+                  {{/body}}
+                    
+                  <h4>Query Params</h4>
+                  <ul>
+                  {{#query}}
+                      <li><span class="param">{{param}}</span> : {{desc}}</li>
+                  {{/query}}
+                  </ul>
+      
+                  <h4>Réponses</h4>
+                  {{#result}}
+                    <p class="responseCode">{{code}}</p>
+                    <pre><code class="json">{{content}}</code></pre>
+                  {{/result}}
+                </div>
+              </div>
+            {{/routes}}
+          </div>
+        </div>
+      {{/categories}}
+    </div>
+
+    <h2 class="bddTitle">Schéma de la base de donnée</h2>
+    <img class="bdd hidden" src="./bdd.svg" alt="Base de donnée" />
+
+    <script src="./script.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  display: block;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
+  background-color: white;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.lastbuild {
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+h2 {
+  margin: 0px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+h2:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.route {
+  margin-left: 10px;
+}
+
+h3:hover {
+  cursor: pointer;
+}
+
+h4 {
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+  text-align: justify;
+}
+
+.method {
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.GET {
+  background-color: #5DADE2;
+  color: white;
+}
+
+.POST {
+  background-color: #F5B041;
+  color: white;
+}
+
+.DELETE {
+  background-color: #E74C3C;
+  color: white;
+}
+
+.responseCode {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+pre {
+  margin: 0;
+}
+
+li {
+  margin: 0;
+}
+
+.param {
+  text-decoration: underline;
+}
+
+.postmanContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.postmanLink {
+  text-align: center;
+}
+
+.postmanLink a {
+  color: black;
+}
+
+.postmanContainer img {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}
+
+/* Base de donnée */
+.bddTitle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.bddTitle::before {
+  content: "▶";
+}
+
+.bddTitle.opened::before {
+  content: "▼";
+}
+
+.bdd {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bdd:not(.hidden) {
+  display: block;
+}
